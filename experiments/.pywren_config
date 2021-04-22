@@ -1,0 +1,32 @@
+account:
+    aws_account_id: 437412249506
+    aws_lambda_role: pywren_exec_role_new
+    aws_region: us-west-2
+
+
+lambda:
+    memory : 3008
+    timeout : 300
+    function_name : pywren_1
+
+s3:
+    bucket: bogdan-pywren-48
+    pywren_prefix: pywren.jobs
+
+runtime:
+  s3_bucket: bogdan-pywren-48
+  s3_key: pywren.runtimes/default_3.7.meta.json
+
+scheduler:
+    map_item_limit: 30000
+
+standalone:
+    ec2_instance_type: r4.16xlarge
+    sqs_queue_name: pywren-jobs-1
+    visibility: 10
+    ec2_ssh_key : imagenet_exps
+    target_ami : ami-b04e92d0
+    instance_name: pywren-standalone
+    instance_profile_name: pywren-standalone
+    max_idle_time: 999999
+    idle_terminate_granularity: 9999999

@@ -1,0 +1,23 @@
+control_plane:
+  control_plane_prefix: numpywren.control
+  ec2_instance_type: m5.24xlarge
+  ec2_ssh_key: imagenet_exps
+  idle_terminate_granularity: 1200
+  max_idle_time: 300
+  password: potato
+  port: 6379
+  spot_price: 0.0
+  #target_ami: ami-759bc50a
+  target_ami: ami-db710fa3
+iam:
+  instance_profile_name: numpywren_exec_instance_profile
+  role_name: pywren_exec_role_new
+runtime:
+  bucket: bogdan-pywren-48
+  s3_key: pywren.runtimes/default_3.7.meta.json
+s3:
+  bucket: bogdan-pywren-48
+  lifespan: 1
+  prefix: npw
+logging:
+    level: INFO
